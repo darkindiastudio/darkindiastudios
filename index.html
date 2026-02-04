@@ -138,43 +138,6 @@ section { padding: 120px 8%; }
   display: flex;
   gap: 18px;
 }
-/* ---------- HERO TITLE STYLING ---------- */
-.hero-title {
-  font-size: 54px;            /* same as hero h1 */
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-/* DARKNESS word – cinematic textured highlight */
-.hero-title .darkness {
-  position: relative;
-  display: inline-block;
-  color: transparent;
-  background: linear-gradient(
-    120deg,
-    #7df9ff,
-    #c77dff,
-    #ff6ec7
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  text-shadow:
-    0 0 18px rgba(120, 200, 255, 0.35),
-    0 0 40px rgba(180, 120, 255, 0.25);
-}
-
-/* subtle texture */
-.hero-title .darkness::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,0.06),
-      rgba(255,255,2
 
 .btn {
   padding: 14px 28px;
@@ -218,7 +181,6 @@ textarea {
   color: var(--muted);
 }
   
-/* ---------- HERO RIGHT IMAGE (FINAL – KEEP THIS LAST) ---------- */
 .hero-image {
   position: relative;
   width: 100%;
@@ -234,37 +196,24 @@ textarea {
 
   transition: box-shadow 0.6s ease;
 }
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease;
-}
 
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Image itself */
 .hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 18%;
 
-  /* 🖤 default black & white */
+  /* Black & white by default */
   filter: grayscale(100%) contrast(1.05) brightness(0.95);
 
   transition: transform 0.8s ease, filter 0.6s ease;
 }
 
-/* 🎨 hover = color reveal */
 .hero-image:hover img {
-  filter: grayscale(0%) contrast(1) brightness(1);
+  filter: grayscale(0%);
   transform: scale(1.06);
 }
 
-/* vignette overlay */
 .hero-image::after {
   content: "";
   position: absolute;
@@ -277,16 +226,6 @@ textarea {
   );
 }
 
-.hero-image:hover {
-  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .hero-image {
-    display: none;
-  }
-}
 
 /* ---------- PIPELINE ---------- */
 .pipeline {
@@ -459,22 +398,19 @@ textarea:-webkit-autofill:focus {
 
 <section id="home" class="hero">
   <div class="reveal">
-    <h1 class="hero-title">
-  Crafted in <span class="darkness">DARKNESS</span>,<br>
-  Delivered with <span class="impact">IMPACT</span>.
-</h1>
+    <h1>Crafted in DARKNESS,<br>Delivered with IMPACT.</h1>
     <p>We're open to collaborate with creators, brands, and companies to craft cinematic visuals.</p>
     <div class="hero-actions">
       <a href="portfolio.html" class="btn btn-primary" style="text-decoration:none;">See My Work</a>
       <div class="btn btn-secondary" onclick="scrollToId('contact')">Start a Project</div>
     </div>
   </div>
- <div class="hero-image">
+  <div class="hero-image reveal">
   <img 
     src="https://i.ibb.co/1frPNpFK/Krish.png" 
     alt="Krish Potrait"
     loading="eager"
-  >
+    >
 </div>
 
 </section>
@@ -609,3 +545,5 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
+read this full code find the solution, make the code and tell me, where i have to paste the fixed code exactly
