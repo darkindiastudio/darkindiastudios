@@ -234,6 +234,16 @@ textarea {
 
   transition: box-shadow 0.6s ease;
 }
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Image itself */
 .hero-image img {
@@ -459,7 +469,7 @@ textarea:-webkit-autofill:focus {
       <div class="btn btn-secondary" onclick="scrollToId('contact')">Start a Project</div>
     </div>
   </div>
- <div class="hero-image reveal">
+ <div class="hero-image">
   <img 
     src="https://i.ibb.co/1frPNpFK/Krish.png" 
     alt="Krish Potrait"
