@@ -138,6 +138,43 @@ section { padding: 120px 8%; }
   display: flex;
   gap: 18px;
 }
+/* ---------- HERO TITLE STYLING ---------- */
+.hero-title {
+  font-size: 54px;            /* same as hero h1 */
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* DARKNESS word – cinematic textured highlight */
+.hero-title .darkness {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(
+    120deg,
+    #7df9ff,
+    #c77dff,
+    #ff6ec7
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  text-shadow:
+    0 0 18px rgba(120, 200, 255, 0.35),
+    0 0 40px rgba(180, 120, 255, 0.25);
+}
+
+/* subtle texture */
+.hero-title .darkness::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.06),
+      rgba(255,255,2
 
 .btn {
   padding: 14px 28px;
@@ -413,7 +450,10 @@ textarea:-webkit-autofill:focus {
 
 <section id="home" class="hero">
   <div class="reveal">
-    <h1>Crafted in DARKNESS,<br>Delivered with IMPACT.</h1>
+    <h1 class="hero-title">
+  Crafted in <span class="darkness">DARKNESS</span>,<br>
+  Delivered with <span class="impact">IMPACT</span>.
+</h1>
     <p>We're open to collaborate with creators, brands, and companies to craft cinematic visuals.</p>
     <div class="hero-actions">
       <a href="portfolio.html" class="btn btn-primary" style="text-decoration:none;">See My Work</a>
