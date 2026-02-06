@@ -115,6 +115,45 @@ section { padding: 120px 8%; }
 
 /* ---------- HERO ---------- */
 .hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: none !important; /* VERY IMPORTANT */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: linear-gradient(
+    120deg,
+    #0f1225,
+    #1a1f4a,
+    #0f1225
+  );
+
+  background-size: 400% 400%;
+  animation: darkMotion 10s ease infinite;
+
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes darkMotion {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+  .hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -395,7 +434,9 @@ textarea:-webkit-autofill:focus {
   </ul>
   <div class="nav-btn" onclick="scrollToId('contact')">LET’S TALK</div>
 </nav>
-
+<section class="hero">
+  <!-- tumhara existing content SAME rahe -->
+</section>
 <section id="home" class="hero">
   <div class="reveal">
    <h1 class="hero-title">
